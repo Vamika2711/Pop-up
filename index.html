@@ -7,6 +7,48 @@
     <title>Quick Maths</title>
     <link rel="icon " href="https://img.freepik.com/premium-vector/math-icon-with-formular-tools_1639-26099.jpg">
     <style>
+        <script>
+            const popOutButton = document.getElementById("button")
+
+const bg_container=document.querySelector(".bg-popContainer")
+
+const exitPopUP = document.getElementById("bg_container")
+
+popOutButton.addEventListener("click", popOutNow);
+
+document.addEventListener("mouseout",exitpPage)
+
+function popOutNow(e) {
+
+    e.preventDefault();
+
+    document.querySelector(".bg-popContainer").style.display = "flex";
+
+}
+
+const cancelPop = document.getElementById("close");
+
+cancelPop.addEventListener("click", CancelPopOut);
+
+function CancelPopOut(e) {
+
+    e.preventDefault();
+
+    document.querySelector(".bg-popContainer").style.display = "none";
+
+}
+
+function exitpPage(event){
+
+    if(event.clientY <50){
+
+        document.removeEventListener("mouseout",exitpPage);
+
+exitPopUP.style.display="flex"
+
+    }
+
+}
         
         body{
             background-color: bisque;
